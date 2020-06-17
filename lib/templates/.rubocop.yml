@@ -77,7 +77,16 @@ Naming/MethodParameterName:
 Naming/BlockParameterName:
   MinNameLength: 2
 
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
 Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Lint/MixedRegexpCaptureTypes:
   Enabled: false
 
 #Checks method call operators to not have spaces around them.
@@ -123,6 +132,15 @@ Style/HashTransformValues:
 
 Style/RedundantReturn:
   Enabled: false
+
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+
+Style/RedundantRegexpEscape:
+  Enabled: false
+
+Style/SlicingWithRange:
+  Enabled: true
 
 Style/TrailingCommaInArguments:
   Enabled:                   true
