@@ -2,6 +2,7 @@
 
 Update shared config for Shuttlerock's projects:
 ```
+  codecov.yml
   .rubocop.yml
   .codeclimate.yml
   .eslintrc
@@ -35,6 +36,7 @@ Or install it yourself as:
     $ rake shuttlerock_shared_config:update_rubocop                # Update .rubocop.yml
     $ rake shuttlerock_shared_config:update_stylelintrc            # Update .stylelintrc
     $ rake shuttlerock_shared_config:update_dangerfile             # Update Dangerfile and create      doc/env_list.yml
+    $ rake shuttlerock_shared_config:update_codecov                # Update codecov.yml
     $ rake shuttlerock_shared_config:update                        # Update all
 
 ## Installation in JS application

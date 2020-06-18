@@ -1,5 +1,23 @@
 # Change log
 
+## 0.2.30 (2020-06-18)
+
+### Changed
+
+- Added task for adding codecov.yml to project.
+  Please run for create/update  codecov.yml:
+  ```
+    rake shuttlerock_shared_config:update_codecov  # Update codecov.yml
+  ```
+
+- Added new cops to rubocop.yml:
+    Layout/EmptyLinesAroundAttributeAccessor (0.83)
+    Lint/DeprecatedOpenSSLConstant (0.84)
+    Lint/MixedRegexpCaptureTypes (0.85)
+    Style/RedundantRegexpCharacterClass (0.85)
+    Style/RedundantRegexpEscape (0.85)
+    Style/SlicingWithRange (0.83)
+
 ## 0.2.29 (2020-05-05)
 
 ### Changed
