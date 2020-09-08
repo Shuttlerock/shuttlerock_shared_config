@@ -1,5 +1,11 @@
 # Change log
 
+## 0.2.31 (2020-09-08)
+
+Updated minimum version requirements for gems
+
+### Changed
+
 ## 0.2.30 (2020-06-18)
 
 ### Changed
