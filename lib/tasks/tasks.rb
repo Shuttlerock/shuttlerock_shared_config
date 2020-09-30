@@ -4,7 +4,7 @@ require 'rake'
 require 'fileutils'
 
 namespace :shuttlerock_shared_config do
-  task update: %i[update_codeclimate update_eslint update_rubocop update_stylelintrc update_dangerfile update_pull_request_template update_codecov] do
+  task update: %i[update_codeclimate update_eslint update_rubocop update_stylelintrc update_dangerfile update_pull_request_template update_codecov update_gitleaks] do
   end
 
   desc 'Update .codeclimate.yml'
@@ -68,5 +68,18 @@ namespace :shuttlerock_shared_config do
     input_path = File.expand_path('../../lib/templates/codecov.yml', __dir__)
     FileUtils.copy(input_path, Dir.pwd)
     warn('Updated codecov.yml')
+  end
+
+  desc 'Update gitleaks'
+  task :update_gitleaks do
+    input_path = File.expand_path('../../lib/templates/gitleaks.yml', __dir__)
+    result_dir = Dir.pwd + '/.github/workflows'
+    FileUtils.mkdir_p(result_dir) unless File.directory?(result_dir)
+    FileUtils.copy(input_path, result_dir)
+    warn('Updated /.github/workflows/gitleaks.yml')
+
+    input_path = File.expand_path('../../lib/templates/.gitleaks.toml', __dir__)
+    FileUtils.copy(input_path, Dir.pwd)
+    warn('Updated .gitleaks.toml')
   end
 end
