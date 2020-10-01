@@ -45,6 +45,15 @@ Layout/HashAlignment:
 Rails/ApplicationController:
   Enabled: true
 
+Rails/AfterCommitOverride:
+  Enabled: true
+
+Rails/SquishedSQLHeredocs:
+  Enabled: true
+
+Rails/WhereNot:
+  Enabled: true
+
 Style/Documentation:
   Enabled: false
 
@@ -77,7 +86,31 @@ Naming/MethodParameterName:
 Naming/BlockParameterName:
   MinNameLength: 2
 
+Lint/ConstantDefinitionInBlock:
+  Enabled: true
+
 Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/DuplicateRequire:
+  Enabled: true
+
+Lint/EmptyFile:
+  Enabled: true
+
+Lint/IdentityComparison:
+  Enabled: true
+
+Lint/TrailingCommaInAttributeDeclaration:
+  Enabled: true
+
+Lint/UselessMethodDefinition:
+  Enabled: true
+
+Lint/UselessTimes:
+  Enabled: true
+
+Layout/BeginEndAlignment:
   Enabled: true
 
 Layout/EmptyLinesAroundBlockBody:
@@ -115,6 +148,9 @@ Style/ClassAndModuleChildren:
   Enabled:       true
   EnforcedStyle: compact
 
+Style/CombinableLoops:
+  Enabled: true
+
 Style/ExponentialNotation:
   Enabled: false
 
@@ -130,6 +166,9 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Enabled: true
 
+Style/KeywordParametersOrder:
+  Enabled: true
+
 Style/RedundantReturn:
   Enabled: false
 
@@ -139,7 +178,13 @@ Style/RedundantRegexpCharacterClass:
 Style/RedundantRegexpEscape:
   Enabled: false
 
+Style/RedundantSelfAssignment:
+  Enabled: true
+
 Style/SlicingWithRange:
+  Enabled: true
+
+Style/SoleNestedConditional:
   Enabled: true
 
 Style/TrailingCommaInArguments:
