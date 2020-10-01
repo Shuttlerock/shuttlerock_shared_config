@@ -10,6 +10,8 @@ Update shared config for Shuttlerock's projects:
    Dangerfile
    env_list.yml
    .env.example
+   .gitleaks.toml
+   gitleaks.yml
    PULL_REQUEST_TEMPLATE.md
 ```
 ## Installation in Ruby application
@@ -37,6 +39,7 @@ Or install it yourself as:
     $ rake shuttlerock_shared_config:update_stylelintrc            # Update .stylelintrc
     $ rake shuttlerock_shared_config:update_dangerfile             # Update Dangerfile and create      doc/env_list.yml
     $ rake shuttlerock_shared_config:update_codecov                # Update codecov.yml
+    $ rake shuttlerock_shared_config:update_gitleaks               # Update .gitleaks.toml/gitleaks.yml
     $ rake shuttlerock_shared_config:update                        # Update all
 
 ## Installation in JS application
