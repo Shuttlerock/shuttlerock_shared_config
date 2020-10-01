@@ -1,5 +1,51 @@
 # Change log
 
+### Changed
+
+## 0.2.32 (2020-10-01)
+
+### Changed
+
+- Added task for updating .gitleaks.toml/gitleaks.yml.
+  Please run for create/update .gitleaks.toml/gitleaks.yml:
+  ```
+    rake shuttlerock_shared_config:update_gitleaks  # Update .gitleaks.toml/gitleaks.yml
+  ```
+
+- Added new cops to rubocop.yml:
+    Layout/BeginEndAlignment: # (new in 0.91)
+    Enabled: true
+    Lint/ConstantDefinitionInBlock: # (new in 0.91)
+    Enabled: true
+    Lint/DuplicateRequire: # (new in 0.90)
+    Enabled: true
+    Lint/EmptyFile: # (new in 0.90)
+    Enabled: true
+    Lint/IdentityComparison: # (new in 0.91)
+    Enabled: true
+    Lint/TrailingCommaInAttributeDeclaration: # (new in 0.90)
+    Enabled: true
+    Lint/UselessMethodDefinition: # (new in 0.90)
+    Enabled: true
+    Lint/UselessTimes: # (new in 0.91)
+    Enabled: true
+    Style/CombinableLoops: # (new in 0.90)
+    Enabled: true
+    Style/KeywordParametersOrder: # (new in 0.90)
+    Enabled: true
+    Style/RedundantSelfAssignment: # (new in 0.90)
+    Enabled: true
+    Style/SoleNestedConditional: # (new in 0.89)
+    Enabled: true
+    Performance/Sum: # (new in 1.8)
+    Enabled: true
+    Rails/AfterCommitOverride: # (new in 2.8)
+    Enabled: true
+    Rails/SquishedSQLHeredocs: # (new in 2.8)
+    Enabled: true
+    Rails/WhereNot: # (new in 2.8)
+    Enabled: true
+
 ## 0.2.31 (2020-09-08)
 
 Updated minimum version requirements for gems
