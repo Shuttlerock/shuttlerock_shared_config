@@ -7,6 +7,9 @@ defaults: &defaults
   working_directory: ~/shuttlerock_shared_config
   docker:
     - image: circleci/ruby:2.6.6-node
+      auth:
+        username: $DOCKERHUB_USERNAME
+        password: $DOCKERHUB_PASSWORD
 
 version: 2
 jobs:
@@ -77,10 +80,14 @@ workflows:
   build-n-deploy:
     jobs:
       - build:
+          context:
+            - docker-hub-creds
           filters:  # required since `deploy` has tag filters AND requires `build`
             tags:
               only: /.*/
       - deploy_rubygems:
+          context:
+            - docker-hub-creds
           requires:
             - build
           filters:
@@ -89,6 +96,8 @@ workflows:
             branches:
               ignore: /.*/
       - deploy_npm:
+          context:
+            - docker-hub-creds
           requires:
             - build
           filters:
