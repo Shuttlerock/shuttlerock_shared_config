@@ -1,17 +1,12 @@
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
+version: 2.1
 
 defaults: &defaults
   working_directory: ~/shuttlerock_shared_config
   docker:
-    - image: circleci/ruby:2.6.6-node
+    - image: cimg/ruby:2.6.6-node
       auth:
         username: $DOCKERHUB_USERNAME
         password: $DOCKERHUB_PASSWORD
-
-version: 2.1
 
 orbs:
   jira: circleci/jira@1.3.0
@@ -27,7 +22,8 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
+            bundle config set path 'vendor/bundle'
+            bundle install --jobs=4 --retry=3
       - save_cache:
           paths:
             - ./vendor/bundle
