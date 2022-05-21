@@ -3,7 +3,7 @@ version: 2.1
 defaults: &defaults
   working_directory: ~/shuttlerock_shared_config
   docker:
-    - image: cimg/ruby:2.6.6-node
+    - image: cimg/ruby:3.0.2-node
       auth:
         username: $DOCKERHUB_USERNAME
         password: $DOCKERHUB_PASSWORD

@@ -2,6 +2,21 @@
 
 ### Changed
 
+## 0.3.0 (2022-05-23)
+
+- Updated required ruby version to ~> 3.0.0
+- Updated rubocop version to allow current ~> 1.0 version
+- Updated rake version to allow current ~> 13.0 version
+- Add dependabot config
+- Add github actions workflow
+- Fix github PR template
+- Update CircleCI image names
+- Update rubocop config:
+  - Add new cops
+  - Add rubocop-rspec
+  - Enable new cops
+  - Target ruby v3
+
 ## 0.2.32 (2020-10-01)
 
 ### Changed
@@ -48,9 +63,7 @@
 
 ## 0.2.31 (2020-09-08)
 
-Updated minimum version requirements for gems
-
-### Changed
+- Updated minimum version requirements for gems
 
 ## 0.2.30 (2020-06-18)
 
