@@ -2,9 +2,11 @@
 require:
   - rubocop-performance
   - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 2.6
+  NewCops: enable
+  TargetRubyVersion: 3.0
   Exclude:
     - 'app/admin/**/*.rb'
     - 'bin/**/*'
@@ -12,6 +14,7 @@ AllCops:
     - 'db/schema.rb'
     - 'db/migrate/**/*'
     - 'lib/tasks/**/*'
+    - 'node_modules/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'
 
@@ -42,18 +45,6 @@ Layout/HashAlignment:
   #   bb: 1
   EnforcedColonStyle: table
 
-Rails/ApplicationController:
-  Enabled: true
-
-Rails/AfterCommitOverride:
-  Enabled: true
-
-Rails/SquishedSQLHeredocs:
-  Enabled: true
-
-Rails/WhereNot:
-  Enabled: true
-
 Style/Documentation:
   Enabled: false
 
@@ -62,6 +53,36 @@ Layout/EmptyLines:
 
 Layout/LineLength:
   Max: 150
+
+Lint/BinaryOperatorWithIdenticalOperands:
+  Enabled: true
+
+Lint/DuplicateElsifCondition:
+  Enabled: true
+
+Lint/DuplicateRescueException:
+  Enabled: true
+
+Lint/EmptyConditionalBody:
+  Enabled: true
+
+Lint/FloatComparison:
+  Enabled: true
+
+Lint/MissingSuper:
+  Enabled: true
+
+Lint/OutOfRangeRegexpRef:
+  Enabled: true
+
+Lint/SelfAssignment:
+  Enabled: true
+
+Lint/TopLevelReturnWithArgument:
+  Enabled: true
+
+Lint/UnreachableLoop:
+  Enabled: true
 
 Metrics/AbcSize:
   Enabled: true
@@ -86,6 +107,9 @@ Naming/MethodParameterName:
 Naming/BlockParameterName:
   MinNameLength: 2
 
+Naming/VariableNumber:
+  EnforcedStyle: normalcase
+
 Lint/ConstantDefinitionInBlock:
   Enabled: true
 
@@ -95,11 +119,20 @@ Lint/DeprecatedOpenSSLConstant:
 Lint/DuplicateRequire:
   Enabled: true
 
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
 Lint/EmptyFile:
   Enabled: true
 
 Lint/IdentityComparison:
   Enabled: true
+
+Lint/MixedRegexpCaptureTypes:
+  Enabled: false
 
 Lint/TrailingCommaInAttributeDeclaration:
   Enabled: true
@@ -112,15 +145,6 @@ Lint/UselessTimes:
 
 Layout/BeginEndAlignment:
   Enabled: true
-
-Layout/EmptyLinesAroundBlockBody:
-  Enabled: false
-
-Layout/EmptyLinesAroundAttributeAccessor:
-  Enabled: true
-
-Lint/MixedRegexpCaptureTypes:
-  Enabled: false
 
 #Checks method call operators to not have spaces around them.
 Layout/SpaceAroundMethodCallOperator:
@@ -138,11 +162,98 @@ Lint/RaiseException:
 Lint/StructNewOverride:
   Enabled: true
 
+Performance/AncestorsInclude:
+  Enabled: true
+
+Performance/BigDecimalWithNumericArgument:
+  Enabled: true
+
+Performance/RedundantSortBlock:
+  Enabled: true
+
+Performance/RedundantStringChars:
+  Enabled: true
+
+Performance/ReverseFirst:
+  Enabled: true
+
+Performance/SortReverse:
+  Enabled: true
+
+Performance/Squeeze:
+  Enabled: true
+
+Performance/StringInclude:
+  Enabled: true
+
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+
+Rails/ApplicationController:
+  Enabled: true
+
+Rails/AfterCommitOverride:
+  Enabled: true
+
+Rails/WhereNot:
+  Enabled: true
+
+Rails/FindById:
+  Enabled: true
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Rails/Inquiry:
+  Enabled: true
+
+Rails/MailerName:
+  Enabled: true
+
+Rails/MatchRoute:
+  Enabled: true
+
+Rails/NegateInclude:
+  Enabled: true
+
+Rails/Pluck:
+  Enabled: true
+
+Rails/PluckInWhere:
+  Enabled: true
+
+Rails/RenderInline:
+  Enabled: true
+
+Rails/RenderPlainText:
+  Enabled: true
+
+Rails/SquishedSQLHeredocs:
+  Enabled: true
+
+Rails/ShortI18n:
+  Enabled: true
+
+Rails/WhereExists:
+  Enabled: true
+
 Style/AccessModifierDeclarations:
   Enabled: false
 
+Style/AccessorGrouping:
+  Enabled: true
+
+Style/ArrayCoercion:
+  Enabled: true
+
+Style/BisectedAttrAccessor:
+  Enabled: true
+
 Style/BlockDelimiters:
   Enabled: false
+
+Style/CaseLikeIf:
+  Enabled: true
 
 Style/ClassAndModuleChildren:
   Enabled:       true
@@ -151,13 +262,25 @@ Style/ClassAndModuleChildren:
 Style/CombinableLoops:
   Enabled: true
 
+Style/ExplicitBlockArgument:
+  Enabled: true
+
 Style/ExponentialNotation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
-  Enabled: false
+  Enabled: true
+
+Style/GlobalStdStream:
+  Enabled: true
+
+Style/HashAsLastArrayItem:
+  Enabled: true
 
 Style/HashEachMethods:
+  Enabled: true
+
+Style/HashLikeCase:
   Enabled: true
 
 Style/HashTransformKeys:
@@ -169,6 +292,21 @@ Style/HashTransformValues:
 Style/KeywordParametersOrder:
   Enabled: true
 
+Style/OptionalBooleanParameter:
+  Enabled: true
+
+Style/RedundantAssignment:
+  Enabled: true
+
+Style/RedundantSelfAssignment:
+  Enabled: true
+
+Style/RedundantFetchBlock:
+  Enabled: true
+
+Style/RedundantFileExtensionInRequire:
+  Enabled: true
+
 Style/RedundantReturn:
   Enabled: false
 
@@ -178,13 +316,16 @@ Style/RedundantRegexpCharacterClass:
 Style/RedundantRegexpEscape:
   Enabled: false
 
-Style/RedundantSelfAssignment:
+Style/SingleArgumentDig:
   Enabled: true
 
 Style/SlicingWithRange:
   Enabled: true
 
 Style/SoleNestedConditional:
+  Enabled: true
+
+Style/StringConcatenation:
   Enabled: true
 
 Style/TrailingCommaInArguments:
@@ -205,4 +346,34 @@ Style/AndOr:
 # https://github.com/codeclimate/codeclimate-rubocop/blob/master/base_rubocop.yml#L71
 # We use %w[ ], not %w( ) because the former looks like an array
 Style/PercentLiteralDelimiters:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 70
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+RSpec/MessageChain:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 25
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 10
+
+RSpec/StubbedMock:
+  Enabled: false
+
+RSpec/ContextWording:
   Enabled: false
