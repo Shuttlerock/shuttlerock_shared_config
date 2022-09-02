@@ -19,6 +19,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'rake', '~> 13.0'
   spec.add_dependency 'rubocop', '~> 1.29'
-  spec.add_dependency 'danger', '~> 8.0'
+  spec.add_dependency 'danger', '>= 8', '< 10'
   spec.add_development_dependency 'rspec', '~> 3.9'
 end
